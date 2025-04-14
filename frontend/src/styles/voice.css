@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep bluish gradient */
+  color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+/* Split Container */
+.split-container {
+  display: flex;
+  height: 100vh;
+  backdrop-filter: blur(8px);
+}
+
+/* Left Panel */
+.left-panel {
+  flex: 1;
+  background: rgba(24, 32, 51, 0.95); /* Navy with depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: slideInLeft 1s ease-out;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;
+  background: #f8f9fa; /* Soft neutral white */
+  color: #2d3436;
+  padding: 50px;
+  overflow-y: auto;
+  animation: slideInRight 1s ease-out;
+  border-left: 2px dashed #ccc;
+}
+
+/* Buttons */
+.voice-button,
+.done-button {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Violet to blue */
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  margin: 20px 10px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.voice-button:hover,
+.done-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* Mic Indicator */
+.mic-on {
+  color: #e74c3c; /* Bright red */
+  animation: pulseMic 1s infinite;
+}
+
+@keyframes pulseMic {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+}
+
+/* Voice Output Box */
+.voice-output {
+  background: #ffffff;
+  color: #2c3e50;
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 18px;
+  line-height: 1.7;
+  max-height: 75vh;
+  overflow-y: auto;
+  animation: fadeInUp 0.8s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Headers */
+.diary-header {
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #4834d4; /* Royal purple */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Highlight */
+.highlight {
+  background: linear-gradient(90deg, #ffeaa7, #fab1a0); /* Light yellow to peach */
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #2d3436;
+}
+
+/* Popup Diary */
+.popup-diary {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  background: #ffffff;
+  color: #222;
+  border-radius: 20px;
+  padding: 35px;
+  z-index: 9999;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  animation: zoomIn 0.5s ease-out;
+}
+
+.popup-content {
+  max-height: 50vh;
+  overflow-y: auto;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

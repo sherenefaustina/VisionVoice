@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right,  #0f2027, #0d0f10, #2c5364);
+  font-family: 'Poppins', sans-serif;
+  color: #f1f1f1;
+  overflow-x: hidden;
+  animation: backgroundAnimation 15s ease infinite; /* Background animation */
+}
+
+@keyframes backgroundAnimation {
+  0% { background: linear-gradient(to right, #0f2027, #0d0f10, #2c5364); }
+  50% { background: linear-gradient(to right, #2c5364, #060b0d, #0f2027); }
+  100% { background: linear-gradient(to right, #0f2027, #030405, #2c5364); }
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease forwards; /* Fade-in for the hero-container */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero-title {
+  font-size: 4rem;
+  background: linear-gradient(to right, #b9a404, #4facfe);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  animation: titleAnim 0.5s ease forwards; /* Fade-in effect for title */
+}
+.visionvoice-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+@keyframes titleAnim {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.highlight {
+  animation: bounce 0.8s ease-in-out infinite;
+  color: #ffef8a;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.1); /* Slightly more opaque for contrast */
+  padding: 20px 30px;
+  margin: 15px 0;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px); /* More pronounced blur */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Stronger border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-size: 1.15rem;
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
+  color: #f9f9f9;
+}
+
+.info-box.delay {
+  animation-delay: 0.5s;
+}
+
+.icon {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  display: block;
+  color: #00e6e6;
+  transition: color 0.3s ease-in-out; /* Add transition on icon hover */
+}
+
+.icon:hover {
+  color: #1de9b6; /* Change to a more vibrant color on hover */
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.button-group {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 50px;
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(0, 242, 255, 0.25); /* Slightly stronger shadow */
+  border: 1px solid rgba(0, 242, 255, 0.5); /* Clearer border */
+}
+
+.glass-btn:hover {
+  background: rgba(0, 242, 255, 0.3);
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 242, 255, 0.5);
+  animation: pulse 0.5s infinite alternate; /* Add pulse on hover */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+.home-page::before,
+.home-page::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0a0a0a, #0d0d0e, #0c0c0c);
+  z-index: 1;
+  animation: glowBorder 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.home-page::before {
+  left: 0;
+}
+
+.home-page::after {
+  right: 0;
+}
+
+@keyframes glowBorder {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}

@@ -1,0 +1,87 @@
+/* src/styles/colorDetector.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #060606, #323232, #81868b);
+    color: #f0f0f0;
+  }
+  
+  /* Container Styling */
+  .detector-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    animation: fadeIn 1s ease;
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Title */
+  .detector-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #ffde59;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    animation: slideInDown 0.7s ease-out;
+  }
+  
+  /* Video Styling */
+  video {
+    border: 6px solid #ff8c00;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+  }
+  
+  video:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+  }
+  
+  /* Result Box */
+  .result-box {
+    margin-top: 30px;
+    padding: 22px 30px;
+    font-size: 1.2rem;
+    background: rgba(255, 248, 220, 0.9);
+    color: #222;
+    border-left: 8px solid #ffde59;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: bounceIn 0.6s ease-out;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

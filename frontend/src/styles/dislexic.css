@@ -1,0 +1,95 @@
+.dislexic-container {
+  background: linear-gradient(to right, #2e0007, #000000, #323232);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.dislexic-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  animation: slideDown 1s ease-out forwards;
+  color: #ffe680;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 90px;
+  padding: 0 20px;
+}
+
+.card {
+  width: 220px;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 20px;
+  backface-visibility: hidden;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #28313B, #485563);
+  color: #f1f1f1;
+  z-index: 2;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
